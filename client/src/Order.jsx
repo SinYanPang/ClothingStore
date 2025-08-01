@@ -51,13 +51,13 @@ export default function Order() {
           <p><strong>Status:</strong> {orderData.order.order_status}</p>
 
           <h3>Items</h3>
-          <ul>
+          <ul style={{ listStyleType: 'none', paddingLeft: 0 }}>
             {orderData.items.map(item => (
               <li key={item.item_id}>
                 Product ID: {item.product_id}, Quantity: {item.quantity}, Paid Each: ${item.paid_each.toFixed(2)}
-              </li>
-            ))}
-          </ul>
+                </li>
+              ))}
+              </ul>
 
           <h3>Total Amount: ${calculateTotal().toFixed(2)}</h3>
         </div>
