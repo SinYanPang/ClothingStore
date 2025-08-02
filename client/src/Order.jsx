@@ -22,7 +22,6 @@ export default function Order() {
     }
   };
 
-  // Calculate total amount
   const calculateTotal = () => {
     if (!orderData || !orderData.items) return 0;
     return orderData.items.reduce((sum, item) => sum + item.quantity * item.paid_each, 0);
@@ -55,9 +54,9 @@ export default function Order() {
             {orderData.items.map(item => (
               <li key={item.item_id}>
                 Product ID: {item.product_id}, Quantity: {item.quantity}, Paid Each: ${item.paid_each.toFixed(2)}
-                </li>
-              ))}
-              </ul>
+              </li>
+            ))}
+          </ul>
 
           <h3>Total Amount: ${calculateTotal().toFixed(2)}</h3>
         </div>
